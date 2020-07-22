@@ -1,0 +1,15 @@
+<configuration>
+    <!--使用自定义持久层框架所需要的配置文件-->
+
+    <!--定义数据库连接-->
+    <dataSource>
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/zdy_mybatis?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;characterEncoding=utf8"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="root"></property>
+    </dataSource>
+
+    <!--定义需要加载的sql配置文件-->
+    <mapper resource="/UserMapper.xml"></mapper>
+
+</configuration>

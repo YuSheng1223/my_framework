@@ -1,0 +1,13 @@
+<mapper namespace="com.ly.persistence.dao.UserMapper">
+
+    <!--nameSpace和id 组成 statementId sql的唯一标识-->
+    <select id="selectList" resultType="com.ly.persistence.bean.User">
+        select * from t_user
+    </select>
+
+
+    <select id="selectOne" resultType="com.ly.persistence.bean.User" parameterType="com.ly.persistence.bean.User">
+        select * from t_user where id = #{id}
+    </select>
+
+</mapper>

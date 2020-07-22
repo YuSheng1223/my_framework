@@ -1,0 +1,13 @@
+<mapper nameSpace="com.ly.persistence.bean.Product">
+
+
+    <select id="selectList" resultType="com.ly.persistence.bean.Product">
+        select * from t_product
+    </select>
+
+
+    <select id="selectOne" resultType="com.ly.persistence.bean.Product" parameterType="com.ly.persistence.bean.Product">
+        select * from t_product where id = #{id}
+    </select>
+
+</mapper>
