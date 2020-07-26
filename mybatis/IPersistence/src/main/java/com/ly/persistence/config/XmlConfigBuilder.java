@@ -6,6 +6,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
+import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
 import org.springframework.core.convert.Property;
 
@@ -40,14 +41,14 @@ public class XmlConfigBuilder {
 
         Element rootElement = read.getRootElement();
 
-        List<Element> list = rootElement.selectNodes("//property");
+        List<Node> list = rootElement.selectNodes("//property");
 
         Properties properties = new Properties();
 
-        for (Element element : list) {
-            String name = element.attributeValue("name");
+        for (Node element : list) {
+            String name = ((Element)element).attributeValue("name");
 
-            String value = element.attributeValue("value");
+            String value = ((Element)element).attributeValue("value");
 
             properties.setProperty(name,value);
         }
@@ -63,10 +64,10 @@ public class XmlConfigBuilder {
 
 
         //解析mapper.xml
-        List<Element> mapperList = rootElement.selectNodes("//mapper");
+        List<Node> mapperList = rootElement.selectNodes("//mapper");
 
-        for (Element element : mapperList) {
-            String resource = element.attributeValue("resource");
+        for (Node element : mapperList) {
+            String resource = ((Element)element).attributeValue("resource");
             InputStream resourceAsStream = Resources.getResourceAsStream(resource);
             XmlMapperBuilder xmlMapperBuilder = new XmlMapperBuilder(configuration);
             xmlMapperBuilder.parse(resourceAsStream);

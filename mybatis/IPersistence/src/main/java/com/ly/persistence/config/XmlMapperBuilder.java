@@ -5,6 +5,7 @@ import com.ly.persistence.pojo.MappedStatement;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
+import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
 
 import java.io.InputStream;
@@ -30,14 +31,14 @@ public class XmlMapperBuilder {
 
         String namespace = rootElement.attributeValue("namespace");
 
-        List<Element> list = rootElement.selectNodes("//select");
+        List<Node> list = rootElement.selectNodes("//select");
 
-        for (Element element : list) {
+        for (Node element : list) {
 
-            String id = element.attributeValue("id");
-            String parameterType = element.attributeValue("parameterType");
-            String resultType = element.attributeValue("resultType");
-            String sqlText = element.getTextTrim();
+            String id = ((Element)element).attributeValue("id");
+            String parameterType = ((Element)element).attributeValue("parameterType");
+            String resultType = ((Element)element).attributeValue("resultType");
+            String sqlText = ((Element)element).getTextTrim();
             //将每一个select语句封装为MappedStatement对象
             MappedStatement mappedStatement = new MappedStatement();
             mappedStatement.setId(id);

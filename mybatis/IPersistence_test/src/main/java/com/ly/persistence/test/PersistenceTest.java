@@ -26,7 +26,7 @@ public class PersistenceTest {
             User user = new User();
             user.setId(2);
             user.setName("宋书航");
-            List<User> objects = sqlSession.selectList("User.selectOne", user);
+            List<User> objects = sqlSession.selectList("com.ly.persistence.dao.UserMapper.selectOne", user);
 
             for (User object : objects) {
                 System.out.println(object.toString());
