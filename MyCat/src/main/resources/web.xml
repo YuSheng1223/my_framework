@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+    <servlet>
+        <servlet-name>customServlet</servlet-name>
+        <servlet-class>server.CustomServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>customServlet</servlet-name>
+        <url-pattern>/custom</url-pattern>
+    </servlet-mapping>
+</web-app>
