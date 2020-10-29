@@ -25,17 +25,17 @@ public class BootStrap {
 
     private int port = 8080;
 
-    private Map<String ,HttpServlet> servletMap = new HashMap<>(16);
+    private Map<String, HttpServlet> servletMap = new HashMap<>(16);
 
     int corePoolSize = 10;
-    int maximumPoolSize = 50 ;
-    long keepAliveTime = 100L ;
-    TimeUnit unit  = TimeUnit.SECONDS ;
+    int maximumPoolSize = 50;
+    long keepAliveTime = 100L;
+    TimeUnit unit = TimeUnit.SECONDS;
     BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<>(50);
     ThreadFactory threadFactory = Executors.defaultThreadFactory();
     RejectedExecutionHandler handler = new ThreadPoolExecutor.AbortPolicy();
 
-    ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(corePoolSize,maximumPoolSize,keepAliveTime,unit,workQueue,threadFactory,handler);
+    ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory, handler);
 
     public int getPort() {
         return port;
@@ -46,8 +46,6 @@ public class BootStrap {
     }
 
     public static void main(String[] args) {
-
-
 
 
         BootStrap bootStrap = new BootStrap();
@@ -68,7 +66,7 @@ public class BootStrap {
     /***
      * 加载配置文件 读取servlet与url映射关系
      */
-    private  void loadServlet() {
+    private void loadServlet() {
 
         InputStream resourceAsStream = this.getClass().getClassLoader().getResourceAsStream("web.xml");
 
@@ -82,7 +80,7 @@ public class BootStrap {
 
             Iterator<Node> iterator = nodes.iterator();
 
-            while (iterator.hasNext()){
+            while (iterator.hasNext()) {
 
                 Element element = (Element) iterator.next();
 
@@ -175,14 +173,14 @@ public class BootStrap {
 
             Response response = new Response(socket.getOutputStream());
 
-            if(servletMap.get(request.getUrl()) == null){
+            if (servletMap.get(request.getUrl()) == null) {
 
                 // response.output(HttpProtocolUtil.notFoundResponse());
                 response.outputHtml(request.getUrl());
-            }else{
+            } else {
 
                 HttpServlet httpServlet = servletMap.get(request.getUrl());
-                httpServlet.service(request,response);
+                httpServlet.service(request, response);
             }
 
             socket.close();
@@ -192,8 +190,6 @@ public class BootStrap {
 
 
     }
-
-
 
 
     /***
@@ -218,7 +214,7 @@ public class BootStrap {
 //            RequestProcessor requestProcessor = new RequestProcessor(socket,servletMap);
 //
 //            requestProcessor.run();
-            RequestProcessor requestProcessor = new RequestProcessor(socket,servletMap);
+            RequestProcessor requestProcessor = new RequestProcessor(socket, servletMap);
 
             threadPoolExecutor.execute(requestProcessor);
 

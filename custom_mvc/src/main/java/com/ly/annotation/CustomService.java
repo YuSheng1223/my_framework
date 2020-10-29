@@ -7,5 +7,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CustomService {
 
-    String value() default  "";
+    String value() default "";
 }

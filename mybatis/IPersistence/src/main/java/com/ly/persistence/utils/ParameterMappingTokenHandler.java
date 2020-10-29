@@ -27,7 +27,7 @@ public class ParameterMappingTokenHandler implements TokenHandler {
         return parameterMappings;
     }
 
-    public void setParameterMappings(List<ParameterMapping> parameterMappings){
+    public void setParameterMappings(List<ParameterMapping> parameterMappings) {
         this.parameterMappings = parameterMappings;
     }
 }

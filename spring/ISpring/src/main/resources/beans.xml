@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans>
 
-    <bean id="userService"  class="com.ly.service.impl.UserServiceImpl">
+    <bean id="userService" class="com.ly.service.impl.UserServiceImpl">
         <property name="UserDao" ref="userDao"></property>
     </bean>
 
-    <bean id="userDao"  class="com.ly.dao.impl.UserDaoImpl">
+    <bean id="userDao" class="com.ly.dao.impl.UserDaoImpl">
         <property name="ConnectionUtils" ref="connectionUtils"></property>
     </bean>
 
@@ -21,8 +21,6 @@
     <bean id="transactionManager" class="com.ly.utils.TransactionManager">
         <property name="ConnectionUtils" ref="connectionUtils"></property>
     </bean>
-
-
 
 
 </beans>

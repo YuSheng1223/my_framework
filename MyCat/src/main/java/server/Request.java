@@ -14,7 +14,7 @@ public class Request {
     /***
      * 请求url
      */
-    private  String url;
+    private String url;
     /***
      * 输入流
      */
@@ -24,7 +24,7 @@ public class Request {
     public Request() {
     }
 
-    public Request(InputStream inputStream) throws  Exception {
+    public Request(InputStream inputStream) throws Exception {
 
         this.inputStream = inputStream;
 

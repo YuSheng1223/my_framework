@@ -7,5 +7,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CustomController {
 
-    String value() default  "";
+    String value() default "";
 }

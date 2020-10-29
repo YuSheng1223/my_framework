@@ -24,13 +24,13 @@ public class UserDaoImpl implements UserDao {
 
         String sql = "select * from t_user where id = ?";
         //DruidPooledConnection connection = DruidUtils.getInstance().getConnection();
-        Connection connection =  connectionUtils.getConnectionFromCurrentThread();
+        Connection connection = connectionUtils.getConnectionFromCurrentThread();
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setObject(1, 1);
         ResultSet resultSet = preparedStatement.executeQuery();
 
         User user = new User();
-        while(resultSet.next()) {
+        while (resultSet.next()) {
 
             user.setId(Integer.valueOf(resultSet.getString("id")));
             user.setName(resultSet.getString("name"));
@@ -43,10 +43,10 @@ public class UserDaoImpl implements UserDao {
     public User update(User user) throws Exception {
 
         String sql = "update t_user set name = ? where id = ?";
-        Connection connection =  connectionUtils.getConnectionFromCurrentThread();
+        Connection connection = connectionUtils.getConnectionFromCurrentThread();
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setObject(1, user.getName());
-        preparedStatement.setObject(2,user.getId());
+        preparedStatement.setObject(2, user.getId());
 
         int i = preparedStatement.executeUpdate();
 

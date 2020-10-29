@@ -15,7 +15,7 @@ public class Configuration {
     /***
      * key ： statementId(bnameSpace和sqlId组成的sql唯一标识) ，value ： MappedStatement 对象
      */
-    private Map<String ,MappedStatement> mappedStatementMap = new HashMap<>();
+    private Map<String, MappedStatement> mappedStatementMap = new HashMap<>();
 
 
     public DataSource getDataSource() {

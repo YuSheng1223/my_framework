@@ -4,8 +4,8 @@ import com.ly.bean.User;
 
 public interface UserDao {
 
-    User gerUserById(String id)throws Exception;
+    User gerUserById(String id) throws Exception;
 
 
-    User update(User user)throws Exception;
+    User update(User user) throws Exception;
 }

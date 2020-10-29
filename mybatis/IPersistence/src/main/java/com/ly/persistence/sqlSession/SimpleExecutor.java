@@ -79,14 +79,14 @@ public class SimpleExecutor implements Executor {
                 Object object = resultSet.getObject(columnName);
 
                 //使用反射 完成数据库和实体之间的赋值
-                PropertyDescriptor propertyDescriptor = new PropertyDescriptor(columnName,classType);
+                PropertyDescriptor propertyDescriptor = new PropertyDescriptor(columnName, classType);
                 Method writeMethod = propertyDescriptor.getWriteMethod();
-                writeMethod.invoke(o,object);
+                writeMethod.invoke(o, object);
             }
             objects.add(o);
         }
 
-        return (List<E>)objects;
+        return (List<E>) objects;
     }
 
     /***

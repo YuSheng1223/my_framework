@@ -36,7 +36,6 @@ public class ProxyFactory {
 //    }
 
 
-
     /***
      * 获取JDK动态代理对象
      * @param obj

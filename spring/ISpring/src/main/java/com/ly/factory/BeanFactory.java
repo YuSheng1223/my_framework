@@ -101,7 +101,7 @@ public class BeanFactory {
 
             logger.info(" 完成beans.xml解析，并且全部配置对象加载完毕..... ");
             for (String key : beanMap.keySet()) {
-                logger.info("beanMap ----> key : {} ,value  : {}" , key , beanMap.get(key));
+                logger.info("beanMap ----> key : {} ,value  : {}", key, beanMap.get(key));
             }
 
 

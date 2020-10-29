@@ -13,11 +13,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@javax.servlet.annotation.WebServlet(name="webServlet",urlPatterns = "/webServlet")
+@javax.servlet.annotation.WebServlet(name = "webServlet", urlPatterns = "/webServlet")
 public class WebServlet extends HttpServlet {
 
 
-    static{
+    static {
         BeanFactory.initBeanFactory();
     }
 

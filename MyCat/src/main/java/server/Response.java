@@ -19,7 +19,7 @@ public class Response {
         this.outputStream = outputStream;
     }
 
-    public  void output(String content) throws IOException {
+    public void output(String content) throws IOException {
         this.outputStream.write(content.getBytes());
     }
 
@@ -28,16 +28,16 @@ public class Response {
      * @param path
      * @throws IOException
      */
-    public  void  outputHtml(String path) throws IOException {
+    public void outputHtml(String path) throws IOException {
         // 绝对路径
         String absoluteResourcePath = StaticResourcesUtils.getAbsolutePath(path);
 
         File file = new File(absoluteResourcePath);
 
-        if(file.exists()){
+        if (file.exists()) {
             // 读取静态资源 输出静态资源
-            StaticResourcesUtils.outputStaticResource(new FileInputStream(file),this.outputStream);
-        }else {
+            StaticResourcesUtils.outputStaticResource(new FileInputStream(file), this.outputStream);
+        } else {
             // 404
             output(HttpProtocolUtil.notFoundResponse());
         }

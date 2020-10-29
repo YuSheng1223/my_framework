@@ -5,5 +5,5 @@ import com.ly.bean.User;
 public interface UserService {
 
 
-    User gerUserById(String id)throws Exception;
+    User gerUserById(String id) throws Exception;
 }

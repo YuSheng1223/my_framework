@@ -10,11 +10,11 @@ public class HttpProtocolUtil {
      * @param contentLength
      * @return
      */
-    public static String successResponse(long contentLength){
+    public static String successResponse(long contentLength) {
 
         String response = "HTTP/1.1 200 OK \n" +
-                            "Content-Type: text/html \n" +
-                            "Content-Length: "+ contentLength + "\n" + "\r\n";
+                "Content-Type: text/html \n" +
+                "Content-Length: " + contentLength + "\n" + "\r\n";
 
         return response;
 
@@ -26,11 +26,11 @@ public class HttpProtocolUtil {
      * @param
      * @return
      */
-    public static String notFoundResponse(){
+    public static String notFoundResponse() {
         String data = "404 NOT Found";
         String response = "HTTP/1.1 404 NOT Found \n" +
                 "Content-Type: text/html \n" +
-                "Content-Length: "+ data.getBytes().length + "\n" + "\r\n" + data;
+                "Content-Length: " + data.getBytes().length + "\n" + "\r\n" + data;
 
         return response;
 

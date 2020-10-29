@@ -7,7 +7,7 @@ import com.alibaba.druid.pool.DruidDataSource;
  */
 public class DruidUtils {
 
-    private DruidUtils(){
+    private DruidUtils() {
     }
 
     private static DruidDataSource druidDataSource = new DruidDataSource();

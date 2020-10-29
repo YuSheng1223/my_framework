@@ -2,7 +2,7 @@ package com.ly.persistence.sqlSession;
 
 import com.ly.persistence.pojo.Configuration;
 
-public class DefaultSqlSessionFactory implements  SqlSessionFactory {
+public class DefaultSqlSessionFactory implements SqlSessionFactory {
 
     private Configuration configuration;
 

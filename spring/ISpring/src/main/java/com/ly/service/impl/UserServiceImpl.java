@@ -20,35 +20,35 @@ public class UserServiceImpl implements UserService {
 
         //UserDao userDao = new UserDaoImpl();
 
-       // UserDao userDao = (UserDao) BeanFactory.getBeanByName("userDao");
-     //   TransactionManager.getInstance().beginTransaction();
+        // UserDao userDao = (UserDao) BeanFactory.getBeanByName("userDao");
+        //   TransactionManager.getInstance().beginTransaction();
         User user = null;
         //try{
 
-            user = userDao.gerUserById(id);
+        user = userDao.gerUserById(id);
 
-            User user1 = new User();
+        User user1 = new User();
 
-            user1.setId(1);
+        user1.setId(1);
 
-            user1.setName("宋书航111");
+        user1.setName("宋书航111");
 
-            userDao.update(user1);
+        userDao.update(user1);
 
-            //int i = 10/0;
+        //int i = 10/0;
 
-            User user2 = new User();
+        User user2 = new User();
 
-            user2.setId(2);
+        user2.setId(2);
 
-            user2.setName("苏阿十六2222");
+        user2.setName("苏阿十六2222");
 
-            userDao.update(user2);
+        userDao.update(user2);
 
         //    TransactionManager.getInstance().commit();
 
         //}catch (Exception e){
-         //   e.printStackTrace();
+        //   e.printStackTrace();
         //    TransactionManager.getInstance().rollback();
         //}
 

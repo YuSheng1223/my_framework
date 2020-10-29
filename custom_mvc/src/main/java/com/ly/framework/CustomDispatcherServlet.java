@@ -102,11 +102,11 @@ public class CustomDispatcherServlet extends HttpServlet {
         //请求携带的参数
         Map<String, String[]> parameterMap = req.getParameterMap();
 
-        for(Map.Entry<String,String[]> param: parameterMap.entrySet()){
+        for (Map.Entry<String, String[]> param : parameterMap.entrySet()) {
 
             String value = StringUtils.join(param.getValue(), ",");
             // 如果参数列表中不包含req中的参数
-            if(!handler.getParamIndexMapping().containsKey(param.getKey())){
+            if (!handler.getParamIndexMapping().containsKey(param.getKey())) {
                 continue;
             }
 
@@ -127,7 +127,7 @@ public class CustomDispatcherServlet extends HttpServlet {
         paramValues[responseIndex] = resp;
 
         try {
-            handler.getMethod().invoke(handler.getController(),paramValues);
+            handler.getMethod().invoke(handler.getController(), paramValues);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {

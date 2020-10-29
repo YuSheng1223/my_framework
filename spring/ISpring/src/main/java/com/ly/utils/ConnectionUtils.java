@@ -10,7 +10,6 @@ import java.sql.SQLException;
 public class ConnectionUtils {
 
 
-
     private static ThreadLocal<Connection> threadLocal = new ThreadLocal<>();
 
     /****

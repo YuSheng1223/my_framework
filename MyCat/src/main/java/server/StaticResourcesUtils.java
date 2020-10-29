@@ -59,7 +59,7 @@ public class StaticResourcesUtils {
 
             outputStream.flush();
 
-            written+=byteSize;
+            written += byteSize;
 
 
         }

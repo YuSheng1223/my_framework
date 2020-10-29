@@ -17,7 +17,7 @@ public class HelloController {
     private HelloService HelloService;
 
     @CustomRequestMapping("/hello")
-    public void SayHello(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse ,String name){
+    public void SayHello(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, String name) {
 
         HelloService.sayHello(name);
     }

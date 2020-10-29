@@ -33,7 +33,7 @@ public class XmlConfigBuilder {
      * @throws DocumentException
      * @throws PropertyVetoException
      */
-    public Configuration parseConfig(InputStream inputStream)throws DocumentException , PropertyVetoException {
+    public Configuration parseConfig(InputStream inputStream) throws DocumentException, PropertyVetoException {
 
         //解析sqlMapConfig.xml
         SAXReader saxReader = new SAXReader();
@@ -46,11 +46,11 @@ public class XmlConfigBuilder {
         Properties properties = new Properties();
 
         for (Node element : list) {
-            String name = ((Element)element).attributeValue("name");
+            String name = ((Element) element).attributeValue("name");
 
-            String value = ((Element)element).attributeValue("value");
+            String value = ((Element) element).attributeValue("value");
 
-            properties.setProperty(name,value);
+            properties.setProperty(name, value);
         }
 
         //连接池
@@ -67,7 +67,7 @@ public class XmlConfigBuilder {
         List<Node> mapperList = rootElement.selectNodes("//mapper");
 
         for (Node element : mapperList) {
-            String resource = ((Element)element).attributeValue("resource");
+            String resource = ((Element) element).attributeValue("resource");
             InputStream resourceAsStream = Resources.getResourceAsStream(resource);
             XmlMapperBuilder xmlMapperBuilder = new XmlMapperBuilder(configuration);
             xmlMapperBuilder.parse(resourceAsStream);

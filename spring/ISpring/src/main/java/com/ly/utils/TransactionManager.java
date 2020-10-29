@@ -15,13 +15,13 @@ public class TransactionManager {
     }
 
 
-    private static  TransactionManager transactionManager = new TransactionManager();
+    private static TransactionManager transactionManager = new TransactionManager();
 
     /***
      * 获取事务管理器实例
      * @return
      */
-    public static TransactionManager getInstance(){
+    public static TransactionManager getInstance() {
         return transactionManager;
     }
 

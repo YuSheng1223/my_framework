@@ -15,7 +15,7 @@ public class Handler {
      */
     private Object controller;
 
-    private Method method ;
+    private Method method;
     /***
      * spring中url是支持正则的
      */
@@ -23,7 +23,7 @@ public class Handler {
     /***
      * 参数顺序 为了进行参数绑定  key是参数名 value代表是第几个参数
      */
-    private Map<String,Integer> paramIndexMapping;
+    private Map<String, Integer> paramIndexMapping;
 
     public Handler(Object controller, Method method, Pattern pattern) {
         this.controller = controller;
