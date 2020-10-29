@@ -55,3 +55,21 @@ MyCat
          ---- 接收请求并调用对应的servelt进行处理，并返回结果
 ```
 
+
+
+
+
+### 5.rpc
+
+rpc目录下：
+
+```
+rpc_common  ---- 公共接口
+
+rpc_consumer ---- 客户端
+
+rpc_provider ---- 服务端
+
+利用netty简单实现了rpc
+```
+
